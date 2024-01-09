@@ -10,9 +10,6 @@ dotenv.config();
 
 app.use(cors());
 
-const postData = {
-    cities: ["toronto", "mumbai", "london"]
-};
 
 
 
@@ -23,20 +20,7 @@ app.use(express.json());
 
 app.use("/", WhetherRoutes);
 
-app.get("/", async (req, res) => {
 
-    axios.post('http://localhost:5000/getWeather', postData)
-        .then(response => {
-            console.log('Response:', response.data);
-            res.send(response.data);
-        })
-        .catch(error => {
-            console.error('Error:', error.message);
-            res.send("error occured");
-        });
-
-
-})
 
 
 
